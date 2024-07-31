@@ -564,6 +564,15 @@ func TestWebhooks(t *testing.T) {
 				"X-Github-Event": []string{"code_scanning_alert"},
 			},
 		},
+		{
+			name:     "MergeGroupEvent",
+			event:    MergeGroupEvent,
+			typ:      MergeGroupPayload{},
+			filename: "../testdata/github/merge_group.json",
+			headers: http.Header{
+				"X-Github-Event": []string{"merge_group"},
+			},
+		},
 	}
 
 	for _, tt := range tests {
